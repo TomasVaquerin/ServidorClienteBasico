@@ -13,7 +13,7 @@ public class Server {
 
             // Nos ponemos a escuchar, cada petición la atendemos en un hilo para no bloquear el main
             while (true) {
-                new ControladorDeCliente(serverSocket.accept()).start();
+                new ClientHandler(serverSocket.accept()).start();
             }
         } catch (IOException e) {
             System.err.println("Error: " + e.getMessage());
